@@ -17,15 +17,26 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
+// Connect to database
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// CORS configuration: Allow requests from the frontend URL
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://news-aggregator-frontend-xzpz.onrender.com"; // Replace with your frontend's deployed URL
+app.use(cors({
+  origin: FRONTEND_URL, // Allow only your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allow HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
+  credentials: true, // Allow cookies and credentials
+}));
+
 app.use(helmet());
 app.use(limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Define routes
 app.use("/api", smartCollections);
 app.use("/auth", auth);
 app.use("/roles", roles);
