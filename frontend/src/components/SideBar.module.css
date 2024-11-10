@@ -1,0 +1,19 @@
+.sidebar {
+  display: "flex";
+  width: 250px; /*Adjust the width of the sidebar as needed*/
+}
+
+.sidebar p {
+  padding: 0px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #0db38e;
+  text-transform: uppercase;
+}
+
+.feed {
+  text-decoration: none;
+  color: #000000;
+}

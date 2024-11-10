@@ -1,0 +1,73 @@
+/*=====================================
+| 
+| ARTICLES & STORIES CARD DISPLAY CSS 
+| 
+*=====================================*/
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center aligns the cards horizontally */
+  font-family: "Roboto", sans-serif;
+}
+.card-title {
+  text-decoration: none; /* Remove underline on link */
+}
+
+.card-title:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/*=====================================
+| LOADER ANIMATION CSS
+| Loaded from: 
+| HTML: <div className="loader"></div>
+*=====================================*/
+
+.loader,
+.loader:before,
+.loader:after {
+  width: 35px;
+  aspect-ratio: 1;
+  box-shadow: 0 0 0 3px inset black;
+  position: relative;
+  animation: 1.5s infinite 0.5s;
+  animation-name: l7-1, l7-2;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  left: calc(100% + 5px);
+  animation-delay: 1s, 0s;
+}
+.loader:after {
+  left: -40px;
+  animation-delay: 0s, 1s;
+}
+@keyframes l7-1 {
+  0%,
+  55%,
+  100% {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  20%,
+  30% {
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+}
+@keyframes l7-2 {
+  0%,
+  55%,
+  100% {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  20%,
+  30% {
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+}

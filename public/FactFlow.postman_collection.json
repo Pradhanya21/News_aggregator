@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "2117313a-24b7-4284-8055-45c910250c91",
+		"name": "FactFlow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33415789"
+	},
+	"item": [
+		{
+			"name": "Registration / Login",
+			"item": [
+				{
+					"name": "{{server}}/auth/allUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/auth/allUser",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"allUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/auth/register",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Issac\",\n    \"lastName\": \"Newton\",\n    \"email\":\"admin@gmail.com\",\n    \"password\":\"qwertyui\",\n    \"role\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"dwaynemail@gmail.com\",\n    \"password\":\"qwertyui\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/auth/refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MGU0ZjE2ZjQ2MDcxMTFhNjgzMGNmYiIsImVtYWlsIjoiZHdheW5lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoiNjYxMDBiNjI2ZDZkZWZkYjBkYTQyNWJmIiwiaWF0IjoxNzEyNDQ4NzU5LCJleHAiOjE3MTUwNDA3NTksImp0aSI6ImYxYmY5ZjI0LTJmMGUtNGQzYS04N2RhLTNjMDM4NWE4N2U4MiJ9.go7e7UpC8cAG-kr4prM4MLSIrOi4aqLGe0Otja1UCHs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/refresh",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/auth/seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/auth/seed",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{refresh_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "SmartCollections/Stories",
+			"item": [
+				{
+					"name": "{{server}}/api/seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/seed",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/api/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/api/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"topic\": \"Tech Startups\",\n        \"minClusterSize\": 5,\n        \"sortBy\": \"createdAt\",\n        \"from\": \"3/23/2024, 4:28:47 PM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/:id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660e4f16f4607111a6830cfb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/api/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"TEST\",\n    \"minClusterSize\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/:id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "661107bf052b0724e82b5b30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/api/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/:id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "661107bf052b0724e82b5b31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/api/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/:id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660e4f16f4607111a6830cfb"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "{{server}}/roles/seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/roles/seed",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"roles",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{server}}/roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/roles",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
