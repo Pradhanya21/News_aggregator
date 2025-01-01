@@ -1,6 +1,4 @@
-# GA Software Engineering Immersive: Project 3
-
-# FactFlow App
+# Newsaggregator Website - FactFlow
 
 **Context:** Misinformation is a big problem and we often concentrate our fighting efforts on stopping the spread of fake news but there are [some researches](https://misinforeview.hks.harvard.edu/wp-content/uploads/2022/01/acerbi_fighting_misinformation_20220112.pdf) that indicate that interventions aimed at reducing acceptance or spread of fake news are bound to have very small effects on the overall quality of the information environment, especially compared to interventions aimed
 at increasing trust in reliable news sources.
